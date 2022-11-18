@@ -1,8 +1,12 @@
 // When I click on Genreate password, I am given prompts as to how long I want the password to be
 
-// When 1st is done, I am asked if I'f like it to contain numbers
+// I am saked if I want upper and lower case letters
 
-// When 2nd is done, I am asked if
+// When 1st is done, I am asked if I'd like it to contain numbers
+
+// When 2nd is done, I am asked if I want symbols
+
+// Then 
 
 // 
 
@@ -94,17 +98,30 @@ var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 console.log(generateBtn);
 
 function generatePassword() {
-var y = parseInt(
+var passordLength = parseInt(
   window.prompt("How many characters would you like your passord to be?"), 10
 )
- if (y < 8 ) {
+ if (passordLength < 8 ) {
   window.alert("Number must be greater than 8 or less than 128")
   return null
  }
- if (y > 128 ) {
+ if (passordLength > 128 ) {
   window.alert("Number must be greater than 8 or less than 128")
   return null
  }
+ var upperCaseLetters = parseInt(
+  window.confirm("Would you like to include Uppercase Letters?")
+ )
+ var lowerCaseLetters = parseInt(
+  window.confirm("Would you like to include Lowercase Letters?")
+ )
+var passwordNumbers = parseInt(
+  window.confirm("Would you like to include numbers?")
+)
+var passwordSymbols =parseInt(
+  window.confirm("Would you like to include symbols?")
+)
+
 
 }
 // Write password to the #password input
