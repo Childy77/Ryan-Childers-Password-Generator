@@ -68,7 +68,7 @@ var lowerCase = [
   'y',
   'z',
 ]
-var characters = [
+var symbols = [
   '@',
   '%',
   '+',
@@ -95,33 +95,66 @@ var characters = [
 ]
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 // var newUpperCase = lowerCase.toString().toUpperCase().split(",")
-console.log(generateBtn);
+// console.log(generateBtn);
 
 function generatePassword() {
-var passordLength = parseInt(
-  window.prompt("How many characters would you like your passord to be?"), 10
-)
- if (passordLength < 8 ) {
-  window.alert("Number must be greater than 8 or less than 128")
-  return null
- }
- if (passordLength > 128 ) {
-  window.alert("Number must be greater than 8 or less than 128")
-  return null
- }
- var upperCaseLetters = parseInt(
-  window.confirm("Would you like to include Uppercase Letters?")
- )
- var lowerCaseLetters = parseInt(
-  window.confirm("Would you like to include Lowercase Letters?")
- )
-var passwordNumbers = parseInt(
-  window.confirm("Would you like to include numbers?")
-)
-var passwordSymbols =parseInt(
-  window.confirm("Would you like to include symbols?")
-)
 
+
+
+  var passwordLength = parseInt(
+    window.prompt("How many characters would you like your password to be?", 10)
+  )
+  if (passwordLength < 8) {
+    window.alert("Number must be greater than 8 or less than 128")
+    return null
+  }
+  if (passwordLength > 128) {
+    window.alert("Number must be greater than 8 or less than 128")
+    return null
+  }
+  var everything = [];
+
+  var useUpperCase = window.confirm("Would you like to include Uppercase Letters?");
+  if (useUpperCase == true) {
+    console.log("yes");
+    everything = everything.concat(upperCase);
+  }
+  var useLowerCase = window.confirm("Would you like to include Lowercase Letters?");
+  if (useLowerCase == true) {
+    console.log("yes");
+    everything = everything.concat(lowerCase)
+  }
+  var useNumbers = window.confirm("Would you like to include Numbers Letters?");
+  if (useNumbers == true) {
+    console.log("yes");
+    everything = everything.concat(numbers)
+  }
+  var useSymbols = window.confirm("Would you like to include Symbols Letters?");
+  if (useSymbols == true) {
+    console.log("yes");
+    everything = everything.concat(symbols)
+  }
+  if (everything.length == 0) {
+    window.alert("please select at least one character type");
+    return null;
+  }
+
+
+
+
+
+
+  // var everything = numbers.concat(symbols).concat(upperCase).concat(lowerCase);
+  var index = 0;
+  var password = "";
+
+  for (let i = 0; i < passwordLength; i++) {
+
+    index = Math.floor(Math.random() * everything.length);
+    // console.log(everything[index]);
+    password = password + everything[index];
+  }
+  return password;
 
 }
 // Write password to the #password input
