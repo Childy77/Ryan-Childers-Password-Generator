@@ -1,14 +1,4 @@
-// When I click on Genreate password, I am given prompts as to how long I want the password to be
 
-// I am saked if I want upper and lower case letters
-
-// When 1st is done, I am asked if I'd like it to contain numbers
-
-// When 2nd is done, I am asked if I want symbols
-
-// Then 
-
-// 
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
