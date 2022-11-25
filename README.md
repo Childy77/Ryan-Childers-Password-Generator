@@ -7,3 +7,7 @@
 -I created if/else statements for each choice scenerio
 
 -I created a loop for to make the choices random
+
+-Link to deployed website: file:///C:/Users/ryanb/code/Ryan-Childers-Password-Generator/Develop/index.html
+
+-image.png
